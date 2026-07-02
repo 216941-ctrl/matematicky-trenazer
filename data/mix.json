@@ -1,0 +1,83 @@
+[
+  {
+    "id": "mix-001",
+    "topic": "mix",
+    "covers": ["exponenciální rovnice", "mocniny"],
+    "type": "equation",
+    "difficulty": 1,
+    "question": "$2^{x+1} = 32$",
+    "hint": "Přepis $32$ jako mocninu $2$. Pak porovnej exponenty.",
+    "solution_steps": [
+      "$2^{x+1} = 2^5$",
+      "Porovnáme exponenty: $x + 1 = 5$",
+      "$x = 4$"
+    ],
+    "answer": "$x = 4$",
+    "theory": "Exponenciální rovnice tvaru $a^{f(x)} = a^{g(x)}$ mají řešení $f(x) = g(x)$, pokud $a > 0$ a $a \\neq 1$.\n\nPostup:\n1. Přepsat obě strany na stejný základ (zde základ $2$)\n2. Porovnat exponenty (funkce $a^x$ je prostá)\n\nZáklady k zapamatování: $32 = 2^5$, $64 = 2^6$, $27 = 3^3$, $81 = 3^4$, $125 = 5^3$",
+    "intuition": "Exponenciální funkce $y = 2^x$ je prostá (každé $y$ odpovídá právě jedno $x$). Proto $2^A = 2^B$ nastane jen tehdy, když $A = B$.\n\nGraficky: $y = 2^{x+1}$ je exponenciálně rostoucí křivka, $y = 32$ je vodorovná přímka. Jejich průsečík je řešení rovnice — nachází se tam, kde křivka dosáhne hodnoty $32$.\n\nPraktická analogie: zdvojnásobování — po každém kroku se hodnota zdvojnásobí. Otázka je, při kolika zdvojeních (od výchozí hodnoty $2^1 = 2$) dostaneme $32$.",
+    "graph": {
+      "fns": ["pow(2, x + 1)", "32"],
+      "labels": ["y = 2^(x+1)", "y = 32"],
+      "xDomain": [-2, 6],
+      "yDomain": [0, 50],
+      "points": [
+        {"x": 4, "y": 32, "label": "x = 4 (řešení)"}
+      ]
+    }
+  },
+  {
+    "id": "mix-002",
+    "topic": "mix",
+    "covers": ["soustava rovnic", "kvadratické rovnice"],
+    "type": "equation",
+    "difficulty": 2,
+    "question": "Řeš soustavu rovnic:\n$x + y = 7$\n$x \\cdot y = 12$",
+    "hint": "Substituuj $y = 7 - x$ do druhé rovnice. Vznikne kvadratická rovnice.",
+    "solution_steps": [
+      "$y = 7 - x$ (z první rovnice)",
+      "$x \\cdot (7 - x) = 12$",
+      "$7x - x^2 = 12$",
+      "$x^2 - 7x + 12 = 0$",
+      "$(x - 3)(x - 4) = 0 \\Rightarrow x = 3$ nebo $x = 4$"
+    ],
+    "answer": "$(x, y) = (3, 4)$ nebo $(4, 3)$",
+    "theory": "Soustava s jednou lineární a jednou kvadratickou rovnicí se řeší substitucí:\n1. Z lineární rovnice vyjádříme jednu proměnnou\n2. Dosadíme do kvadratické → vznikne kvadratika v jedné proměnné\n3. Vyřešíme kvadratiku, zpět dosadíme pro druhou proměnnou\n\nSoustava $x + y = s$, $x \\cdot y = p$ definuje čísla $x$, $y$ jako kořeny kvadratické rovnice $t^2 - s \\cdot t + p = 0$ (Vièta vzorce).",
+    "intuition": "Hledáme dvě čísla $x$ a $y$, jejichž součet je $7$ a součin je $12$. Tato čísla jsou $3$ a $4$.\n\nGraficky: $x + y = 7$ je přímka, $x \\cdot y = 12$ je hyperbola. Hledáme jejich průsečíky — jsou dva: $(3, 4)$ a $(4, 3)$.\n\nVièta vzorce: pro kvadratiku $t^2 - 7t + 12 = 0$ jsou kořeny $t_1, t_2$ taková čísla, že $t_1 + t_2 = 7$ a $t_1 \\cdot t_2 = 12$. To jsou přesně naše $x$ a $y$.\n\nPraktická analogie: máš obdélník s obvodem $2 \\cdot 7 = 14$ a plochou $12$. Rozměry stran jsou řešením této soustavy: $3 \\times 4$.",
+    "graph": {
+      "type": "points",
+      "fns": ["7 - x", "12/x"],
+      "labels": ["y = 7−x", "y = 12/x"],
+      "xDomain": [0.5, 8],
+      "yDomain": [0, 8],
+      "points": [
+        {"x": 3, "y": 4, "label": "(3, 4)"},
+        {"x": 4, "y": 3, "label": "(4, 3)"}
+      ]
+    }
+  },
+  {
+    "id": "mix-003",
+    "topic": "mix",
+    "covers": ["exponenciální rovnice", "mocniny"],
+    "type": "equation",
+    "difficulty": 1,
+    "question": "$3^x = 81$",
+    "hint": "Přepis $81$ jako mocninu $3$.",
+    "solution_steps": [
+      "$3^x = 3^4$",
+      "$x = 4$"
+    ],
+    "answer": "$x = 4$",
+    "theory": "Exponenciální rovnice tvaru $a^x = b$:\n1. Pokud lze $b$ přepsat jako $a^n$: $a^x = a^n \\Rightarrow x = n$\n2. Obecně: $x = \\log_a(b) = \\frac{\\ln(b)}{\\ln(a)}$\n\nZáklady mocnin k zapamatování:\n  $2$: $1, 2, 4, 8, 16, 32, 64, 128, 256, \\ldots$\n  $3$: $1, 3, 9, 27, 81, 243, \\ldots$\n  $5$: $1, 5, 25, 125, 625, \\ldots$\n  $10$: $1, 10, 100, 1000, \\ldots$",
+    "intuition": "$3^x = 81$ se ptá: 'Kolikrát musím číslo $3$ násobit samo sebou, abych dostal $81$?'\n  $3^1 = 3$, $3^2 = 9$, $3^3 = 27$, $3^4 = 81$ → odpověď je $4$.\n\nGraficky: $y = 3^x$ je exponenciálně rostoucí křivka. Přímka $y = 81$ ji protíná v jediném bodě $x = 4$.\n\nPraktická analogie: bakterie se každou hodinu ztrojnásobí. Začínáš s $1$ bakterií — po $4$ hodinách máš $3^4 = 81$ bakterií. Otázka $3^x = 81$ odpovídá na 'po kolika hodinách bude $81$ bakterií?'",
+    "graph": {
+      "fns": ["pow(3, x)", "81"],
+      "labels": ["y = 3ˣ", "y = 81"],
+      "xDomain": [-1, 5.5],
+      "yDomain": [0, 100],
+      "points": [
+        {"x": 4, "y": 81, "label": "x = 4 (řešení)"}
+      ]
+    }
+  }
+]

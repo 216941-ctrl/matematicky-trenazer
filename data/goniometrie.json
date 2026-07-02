@@ -1,0 +1,105 @@
+[
+  {
+    "id": "gon-001",
+    "topic": "goniometrie",
+    "type": "equation",
+    "difficulty": 1,
+    "question": "Řeš pro $x \\in \\langle 0, 2\\pi)$: $\\sin(x) = \\frac{\\sqrt{2}}{2}$",
+    "hint": "$\\sin\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2}$. Sinus je kladný v I. a II. kvadrantu.",
+    "solution_steps": [
+      "$\\sin(x) = \\frac{\\sqrt{2}}{2}$",
+      "Základní řešení: $x = \\arcsin\\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{\\pi}{4}$",
+      "Druhé řešení: $x = \\pi - \\frac{\\pi}{4} = \\frac{3\\pi}{4}$"
+    ],
+    "answer": "$x_1 = \\frac{\\pi}{4}, x_2 = \\frac{3\\pi}{4}$",
+    "theory": "Goniometrická rovnice $\\sin(x) = k$ má v intervalu $\\langle 0, 2\\pi)$ řešení:\n\nPro $k > 0$ (I. a II. kvadrant):\n  $x_1 = \\arcsin(k)$\n  $x_2 = \\pi - \\arcsin(k)$\n\nPro $k < 0$ (III. a IV. kvadrant):\n  $x_1 = \\pi + |\\arcsin(k)|$\n  $x_2 = 2\\pi - |\\arcsin(k)|$\n\nPro $|k| > 1$ nemá rovnice řešení.\n\nHodnoty k zapamatování: $\\sin\\left(\\frac{\\pi}{6}\\right) = \\frac{1}{2}$, $\\sin\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2}$, $\\sin\\left(\\frac{\\pi}{3}\\right) = \\frac{\\sqrt{3}}{2}$, $\\sin\\left(\\frac{\\pi}{2}\\right) = 1$.",
+    "intuition": "Na jednotkové kružnici odpovídá $\\sin(x)$ y-ové souřadnici bodu na kružnici.\n\n$\\sin(x) = \\frac{\\sqrt{2}}{2} \\approx 0{,}707$ — hledáme body, kde $\\sin(\\alpha) = \\frac{\\sqrt{2}}{2}$. Jsou dva: v I. kvadrantu ($x = \\frac{\\pi}{4}$) a v II. kvadrantu ($x = \\frac{3\\pi}{4}$), symetricky podle osy y.\n\nPraktická analogie: $\\sin$ popisuje výšku bodu na rotujícím kole. Kabinka je ve výšce $\\frac{\\sqrt{2}}{2}$ poloměru dvakrát za otáčku: při $x = \\frac{\\pi}{4}$ a při $x = \\frac{3\\pi}{4}$.",
+    "graph": {
+      "type": "unit_circle",
+      "fn": "sin",
+      "value": "√2/2",
+      "angles": [
+        {"rad": "pi/4", "label": "π/4"},
+        {"rad": "3pi/4", "label": "3π/4"}
+      ]
+    }
+  },
+  {
+    "id": "gon-002",
+    "topic": "goniometrie",
+    "type": "equation",
+    "difficulty": 1,
+    "question": "Řeš pro $x \\in \\langle 0, 2\\pi)$: $\\cos(x) = -\\frac{1}{2}$",
+    "hint": "$\\cos\\left(\\frac{\\pi}{3}\\right) = \\frac{1}{2}$. Pro záporné hodnoty hledej v II. a III. kvadrantu.",
+    "solution_steps": [
+      "$\\cos(x) = -\\frac{1}{2}$",
+      "Základní úhel: $\\frac{\\pi}{3}$",
+      "Řešení: $x = \\pi - \\frac{\\pi}{3} = \\frac{2\\pi}{3}$ nebo $x = \\pi + \\frac{\\pi}{3} = \\frac{4\\pi}{3}$"
+    ],
+    "answer": "$x_1 = \\frac{2\\pi}{3}, x_2 = \\frac{4\\pi}{3}$",
+    "theory": "Goniometrická rovnice $\\cos(x) = k$ má v intervalu $\\langle 0, 2\\pi)$ řešení:\n\nPro $k > 0$ (I. a IV. kvadrant):\n  $x_1 = \\arccos(k)$\n  $x_2 = 2\\pi - \\arccos(k)$\n\nPro $k < 0$ (II. a III. kvadrant):\n  $x_1 = \\pi - \\arccos(|k|)$\n  $x_2 = \\pi + \\arccos(|k|)$\n\nHodnoty k zapamatování: $\\cos(0) = 1$, $\\cos\\left(\\frac{\\pi}{6}\\right) = \\frac{\\sqrt{3}}{2}$, $\\cos\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2}$, $\\cos\\left(\\frac{\\pi}{3}\\right) = \\frac{1}{2}$, $\\cos\\left(\\frac{\\pi}{2}\\right) = 0$, $\\cos(\\pi) = -1$.",
+    "intuition": "Na jednotkové kružnici odpovídá $\\cos(x)$ x-ové souřadnici bodu.\n\n$\\cos(x) = -\\frac{1}{2}$ — hledáme body, kde $\\cos(\\alpha) = -\\frac{1}{2}$. Jsou dva, oba vlevo od osy y: v II. kvadrantu ($x = \\frac{2\\pi}{3}$) a v III. kvadrantu ($x = \\frac{4\\pi}{3}$), symetricky podle osy x.\n\nPraktická analogie: $\\cos$ popisuje vodorovnou polohu bodu na rotujícím kole. V těchto dvou úhlech je bod o polovinu poloměru vlevo od středu.",
+    "graph": {
+      "type": "unit_circle",
+      "fn": "cos",
+      "value": "−1/2",
+      "angles": [
+        {"rad": "2pi/3", "label": "2π/3"},
+        {"rad": "4pi/3", "label": "4π/3"}
+      ]
+    }
+  },
+  {
+    "id": "gon-003",
+    "topic": "goniometrie",
+    "type": "equation",
+    "difficulty": 3,
+    "question": "Řeš pro $x \\in \\langle 0, 2\\pi)$: $2\\sin^2(x) - \\sin(x) - 1 = 0$",
+    "hint": "Substituce $t = \\sin(x)$. Vznikne kvadratická rovnice $2t^2 - t - 1 = 0$.",
+    "solution_steps": [
+      "$t = \\sin(x)$, rovnice: $2t^2 - t - 1 = 0$",
+      "$(2t + 1)(t - 1) = 0 \\Rightarrow t = -\\frac{1}{2}$ nebo $t = 1$",
+      "$\\sin(x) = 1 \\Rightarrow x = \\frac{\\pi}{2}$",
+      "$\\sin(x) = -\\frac{1}{2} \\Rightarrow x = \\frac{7\\pi}{6}$ nebo $x = \\frac{11\\pi}{6}$"
+    ],
+    "answer": "$x = \\frac{\\pi}{2}$, $x = \\frac{7\\pi}{6}$ nebo $x = \\frac{11\\pi}{6}$",
+    "theory": "Rovnice obsahující $\\sin^2(x)$ se řeší substitucí $t = \\sin(x)$:\n  $\\sin^2(x) \\to t^2$\n  $\\sin(x) \\to t$\n\nZíská se kvadratická rovnice v $t$. Po vyřešení se zpětně dosadí a řeší se goniometrická rovnice v $\\langle 0, 2\\pi)$.\n\nPozor: $t = \\sin(x)$ musí splňovat $-1 \\leq t \\leq 1$. Hodnoty mimo tento interval nedávají žádné řešení.\n\nStejná metoda funguje pro $\\cos^2(x)$ s substitucí $t = \\cos(x)$.",
+    "intuition": "Substitucí $t = \\sin(x)$ převedeme tvar na obyčejnou kvadratiku, vyřešíme ji a pak zpátky hledáme úhly.\n\nNa grafu vidíme křivku $2\\sin^2(x) - \\sin(x) - 1$ (jantarová) a přímku $y = 0$ (modrá). Jejich průsečíky jsou řešení.\n\nVyplyne $\\sin(x) = 1$ (bod úplně nahoře kružnice, $x = \\frac{\\pi}{2}$) a $\\sin(x) = -\\frac{1}{2}$ (dva body v dolní polovině kružnice, $x = \\frac{7\\pi}{6}$ a $x = \\frac{11\\pi}{6}$). Celkem 3 řešení.",
+    "graph": {
+      "fns": ["2*sin(x)^2 - sin(x) - 1", "0"],
+      "labels": ["2sin²(x)−sin(x)−1", "y = 0"],
+      "xDomain": [0, 6.284],
+      "yDomain": [-2, 3],
+      "points": [
+        {"x": 1.5708, "y": 0, "label": "π/2"},
+        {"x": 3.6652, "y": 0, "label": "7π/6"},
+        {"x": 5.7596, "y": 0, "label": "11π/6"}
+      ]
+    }
+  },
+  {
+    "id": "gon-004",
+    "topic": "goniometrie",
+    "type": "equation",
+    "difficulty": 2,
+    "question": "Řeš pro $x \\in \\langle 0, 2\\pi)$: $\\tan(x) = \\sqrt{3}$",
+    "hint": "$\\tan\\left(\\frac{\\pi}{3}\\right) = \\sqrt{3}$. Tangens má periodu $\\pi$.",
+    "solution_steps": [
+      "$\\tan(x) = \\sqrt{3}$",
+      "Základní řešení: $x = \\arctan(\\sqrt{3}) = \\frac{\\pi}{3}$",
+      "Druhé řešení: $x = \\frac{\\pi}{3} + \\pi = \\frac{4\\pi}{3}$"
+    ],
+    "answer": "$x_1 = \\frac{\\pi}{3}, x_2 = \\frac{4\\pi}{3}$",
+    "theory": "Goniometrická rovnice $\\tan(x) = k$ má v intervalu $\\langle 0, 2\\pi)$ řešení:\n  $x_1 = \\arctan(k)$\n  $x_2 = \\arctan(k) + \\pi$\n\nTangens má periodu $\\pi$ (ne $2\\pi$ jako $\\sin$ a $\\cos$), proto v intervalu $2\\pi$ jsou vždy právě dvě řešení.\n\nVztah: $\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}$ — $\\tan$ je kladný, pokud $\\sin$ a $\\cos$ mají stejné znaménko (I. a III. kvadrant), záporný pokud opačné (II. a IV. kvadrant).\n\nHodnoty k zapamatování:\n  $\\tan(0) = 0$, $\\tan\\left(\\frac{\\pi}{6}\\right) = \\frac{1}{\\sqrt{3}}$, $\\tan\\left(\\frac{\\pi}{4}\\right) = 1$, $\\tan\\left(\\frac{\\pi}{3}\\right) = \\sqrt{3}$\n  $\\tan\\left(\\frac{\\pi}{2}\\right)$ a $\\tan\\left(\\frac{3\\pi}{2}\\right)$ nejsou definovány.",
+    "intuition": "Na jednotkové kružnici jsou osy popsány jako $\\cos(\\alpha)$ (vodorovná) a $\\sin(\\alpha)$ (svislá). Tangens je pak podíl souřadnic bodu na kružnici: $\\tan(\\alpha) = \\frac{\\sin(\\alpha)}{\\cos(\\alpha)}$.\n\nPřímka z počátku k bodu na kružnici má sklon rovný tangentu daného úhlu. Pro $\\frac{\\pi}{3}$ i $\\frac{4\\pi}{3}$ leží bod v jiném kvadrantu, ale přímka má stejný sklon — proto $\\tan$ má periodu $\\pi$, ne $2\\pi$.\n\nPraktická analogie: $\\tan(x)$ udává sklon přímky. $\\tan\\left(\\frac{\\pi}{3}\\right) = \\sqrt{3} \\approx 1{,}73$ → svah stoupající o 173 cm na každý metr vodorovně.",
+    "graph": {
+      "type": "unit_circle",
+      "fn": "tan",
+      "value": "√3",
+      "angles": [
+        {"rad": "pi/3", "label": "π/3"},
+        {"rad": "4pi/3", "label": "4π/3"}
+      ]
+    }
+  }
+]

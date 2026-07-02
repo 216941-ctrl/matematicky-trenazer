@@ -1,0 +1,134 @@
+[
+  {
+    "id": "kv-001",
+    "topic": "kvadratické rovnice",
+    "type": "equation",
+    "difficulty": 1,
+    "question": "Vyřeš rovnici: $x^2 - 5x + 6 = 0$",
+    "hint": "Použij diskriminant $D = b^2 - 4ac$ nebo zkus faktorizaci — hledej dvě čísla se součtem $5$ a součinem $6$.",
+    "solution_steps": [
+      "Diskriminant: $D = (-5)^2 - 4 \\cdot 1 \\cdot 6 = 25 - 24 = 1$",
+      "$x = \\frac{5 \\pm \\sqrt{1}}{2}$",
+      "$x_1 = \\frac{5 + 1}{2} = 3, \\quad x_2 = \\frac{5 - 1}{2} = 2$"
+    ],
+    "answer": "$x_1 = 2, x_2 = 3$",
+    "theory": "Kvadratická rovnice $ax^2 + bx + c = 0$ se řeší diskriminantem:\n$D = b^2 - 4ac$\n\n• $D > 0$ → dva různé reálné kořeny: $x_{1,2} = \\frac{-b \\pm \\sqrt{D}}{2a}$\n• $D = 0$ → jeden dvojnásobný kořen: $x = \\frac{-b}{2a}$\n• $D < 0$ → žádný reálný kořen\n\nAlternativa — faktorizace (často rychlejší): hledáme $p, q$ tak, aby $p + q = -b$ a $p \\cdot q = c$, pak $x^2 + bx + c = (x - p)(x - q)$. Pro tuto rovnici: $p + q = 5$, $p \\cdot q = 6$ → $p = 2$, $q = 3$.",
+    "intuition": "Kořeny rovnice $x^2 - 5x + 6 = 0$ jsou $x$-souřadnice bodů, kde parabola $y = x^2 - 5x + 6$ kříží osu $x$ (y = 0).\n\nParabola se otvírá nahoru. Dvě barevné křivky: parabola a přímka $y = 0$ — hledáme jejich průsečíky: $x = 2$ a $x = 3$. Vrchol leží uprostřed na $x = 2{,}5$.\n\nPraktická analogie: kdybys hodil míč šikmo vzhůru a sledoval jeho výšku jako funkci vodorovné vzdálenosti — kořeny říkají, kde míč dopadne na zem.",
+    "graph": {
+      "fns": ["x^2 - 5*x + 6", "0"],
+      "labels": ["y = x²−5x+6", "y = 0"],
+      "xDomain": [-0.5, 5.5],
+      "yDomain": [-0.8, 4],
+      "points": [
+        {"x": 2, "y": 0, "label": "x₁ = 2"},
+        {"x": 3, "y": 0, "label": "x₂ = 3"},
+        {"x": 2.5, "y": -0.25, "label": "vrchol"}
+      ]
+    }
+  },
+  {
+    "id": "kv-002",
+    "topic": "kvadratické rovnice",
+    "type": "equation",
+    "difficulty": 1,
+    "question": "Vyřeš rovnici: $2x^2 - 8 = 0$",
+    "hint": "Vyjádři $x^2$ a pak vezmi odmocninu. Nezapomeň na obě znaménka ($\\pm$).",
+    "solution_steps": [
+      "$2x^2 = 8$",
+      "$x^2 = 4$",
+      "$x = \\pm 2$"
+    ],
+    "answer": "$x_1 = 2, x_2 = -2$",
+    "theory": "Kvadratická rovnice $ax^2 + c = 0$ (bez členu s $x$) je speciální případ — lze ji řešit přímo:\n$ax^2 = -c$\n$x^2 = -\\frac{c}{a}$\n\n• Pokud $-\\frac{c}{a} > 0$: $x = \\pm\\sqrt{-\\frac{c}{a}}$ (dvě řešení)\n• Pokud $-\\frac{c}{a} = 0$: $x = 0$ (jedno řešení)\n• Pokud $-\\frac{c}{a} < 0$: žádné reálné řešení\n\nUmocnění vždy dá kladný výsledek, proto $\\pm\\sqrt{\\ }$ dávají dvě symetrická řešení.",
+    "intuition": "Rovnici $2x^2 = 8$ přepíšeme jako hledání průsečíku paraboly $y = 2x^2$ s vodorovnou přímkou $y = 8$.\n\nParabola je symetrická podle osy $y$ — proto má průsečíky symetricky v $x = -2$ a $x = 2$. Obě čísla jsou na stejné výšce $y = 8$ paraboly.\n\nPrakticky: rovnice říká, že čtverec délky $x$ má plochu $4\\ \\text{m}^2$ — délka strany je $2\\ \\text{m}$ (a $-2$ jako matematická symetrie).",
+    "graph": {
+      "fns": ["2*x^2", "8"],
+      "labels": ["y = 2x²", "y = 8"],
+      "xDomain": [-3.5, 3.5],
+      "yDomain": [-1, 12],
+      "points": [
+        {"x": -2, "y": 8, "label": "x₂ = −2"},
+        {"x": 2, "y": 8, "label": "x₁ = 2"}
+      ]
+    }
+  },
+  {
+    "id": "kv-003",
+    "topic": "kvadratické rovnice",
+    "type": "equation",
+    "difficulty": 1,
+    "question": "Vyřeš rovnici: $x^2 + 4x + 4 = 0$",
+    "hint": "Zkus rozložit levou stranu jako $(x + a)^2$.",
+    "solution_steps": [
+      "$(x + 2)^2 = 0$",
+      "$x + 2 = 0$",
+      "$x = -2$"
+    ],
+    "answer": "$x = -2$ (dvojnásobný kořen)",
+    "theory": "Kvadratická rovnice může mít diskriminant $D = 0$. V tom případě existuje jediný kořen (tzv. dvojnásobný kořen):\n$x = \\frac{-b}{2a}$\n\nSpeciální případ: úplný čtverec\n$x^2 + 2ax + a^2 = (x + a)^2$\n\nPokud je levá strana rovnice úplný čtverec, rovnice má jediný kořen. Tato forma se vyskytuje i v metodě doplnění na čtverec při odvozování vzorce pro kořeny.",
+    "intuition": "Parabola $y = (x + 2)^2$ se dotýká přímky $y = 0$ přesně v jednom bodě ($x = -2$) — nepřekříží ji ze dvou stran, jen se jí dotkne.\n\nProto hovoříme o dvojnásobném kořenu. Vrchol paraboly leží přímo na ose $x$.\n\nPraktická analogie: fotbalový míč kopnutý přesně rovně — nepřelétne cíl ani nedopadne před ním, přesně se ho dotkne. Je to hraniční případ mezi přeletem a nedoletem.",
+    "graph": {
+      "fns": ["(x + 2)^2", "0"],
+      "labels": ["y = (x+2)²", "y = 0"],
+      "xDomain": [-5, 1],
+      "yDomain": [-0.5, 6],
+      "points": [
+        {"x": -2, "y": 0, "label": "x = −2 (dvojnásobný kořen)"}
+      ]
+    }
+  },
+  {
+    "id": "kv-004",
+    "topic": "kvadratické rovnice",
+    "type": "equation",
+    "difficulty": 1,
+    "question": "Vyřeš rovnici: $x^2 - 3x - 10 = 0$",
+    "hint": "Použij diskriminant $D = b^2 - 4ac$ a dosaď koeficienty rovnice.",
+    "solution_steps": [
+      "$D = (-3)^2 - 4 \\cdot 1 \\cdot (-10) = 9 + 40 = 49$",
+      "$x = \\frac{3 \\pm 7}{2}$",
+      "$x_1 = \\frac{3 + 7}{2} = 5, \\quad x_2 = \\frac{3 - 7}{2} = -2$"
+    ],
+    "answer": "$x_1 = 5, x_2 = -2$",
+    "theory": "Kvadratická rovnice $ax^2 + bx + c = 0$ se řeší diskriminantem:\n$D = b^2 - 4ac$, $\\quad x_{1,2} = \\frac{-b \\pm \\sqrt{D}}{2a}$\n\nZásadní je správné dosazení znamének — chyba v záporném $b$ nebo $c$ změní výsledek. Postup: nejprve vypiš $a$, $b$, $c$ ze standardního tvaru, pak dosaď do vzorce.\n\nPokud $c < 0$: výraz $-4ac$ je kladný → $D > b^2 > 0$ → rovnice má vždy dva reálné kořeny s opačnými znaménky (součin kořenů $= c/a < 0$).",
+    "intuition": "Rovnice $x^2 - 3x - 10 = 0$ — parabola kříží přímku $y = 0$ ve dvou bodech: $x = -2$ a $x = 5$.\n\nSoučin kořenů $= c/a = -10 < 0$ → kořeny mají opačná znaménka. Vrchol paraboly je uprostřed kořenů na $x = 1{,}5$.\n\nPrakticky: rovnice popisuje pohyb — výška projektilu jako funkce vzdálenosti. Průsečíky s $y = 0$ jsou místa, kde výška $= 0$.",
+    "graph": {
+      "fns": ["x^2 - 3*x - 10", "0"],
+      "labels": ["y = x²−3x−10", "y = 0"],
+      "xDomain": [-3.5, 6.5],
+      "yDomain": [-12, 6],
+      "points": [
+        {"x": -2, "y": 0, "label": "x₂ = −2"},
+        {"x": 5, "y": 0, "label": "x₁ = 5"},
+        {"x": 1.5, "y": -12.25, "label": "vrchol"}
+      ]
+    }
+  },
+  {
+    "id": "kv-005",
+    "topic": "kvadratické rovnice",
+    "type": "equation",
+    "difficulty": 1,
+    "question": "Vyřeš rovnici: $x^2 + x - 6 = 0$",
+    "hint": "Hledej čísla $p, q$ taková, že $p + q = -1$ a $p \\cdot q = -6$. Pak $x^2 + x - 6 = (x - p)(x - q)$.",
+    "solution_steps": [
+      "$D = 1^2 - 4 \\cdot 1 \\cdot (-6) = 1 + 24 = 25$",
+      "$x = \\frac{-1 \\pm 5}{2}$",
+      "$x_1 = \\frac{-1 + 5}{2} = 2, \\quad x_2 = \\frac{-1 - 5}{2} = -3$"
+    ],
+    "answer": "$x_1 = 2, x_2 = -3$",
+    "theory": "Pro rovnice tvaru $x^2 + bx + c = 0$ (kde $a = 1$) je faktorizace často rychlejší než diskriminant:\nhledáme $p, q$ tak, aby $p + q = -b$ a $p \\cdot q = c$, pak $x^2 + bx + c = (x - p)(x - q)$.\n\nPro $x^2 + x - 6$: $p + q = -1$ a $p \\cdot q = -6$ → $p = 2$, $q = -3$ → $(x - 2)(x + 3) = 0$.\n\nDiskriminantový vzorec $x_{1,2} = \\frac{-b \\pm \\sqrt{D}}{2a}$ vždy funguje, ale u $a = 1$ s malými koeficienty si zkuste faktorizaci odhadnout nejprve — ušetříte čas.",
+    "intuition": "Parabola $y = x^2 + x - 6$ kříží přímku $y = 0$ ve dvou bodech: $x = -3$ a $x = 2$.\n\nSoučin kořenů $= -6 < 0$ → opačná znaménka. Součet kořenů $= -1$ → záporný kořen je absolutní hodnotou o $1$ větší než kladný. Vrchol je na $x = -0{,}5$.\n\nPraktická analogie: délky dvou úseků se součinem $6$, které se liší o $1$ — jsou to $2$ a $3$.",
+    "graph": {
+      "fns": ["x^2 + x - 6", "0"],
+      "labels": ["y = x²+x−6", "y = 0"],
+      "xDomain": [-4.5, 3.5],
+      "yDomain": [-7, 5],
+      "points": [
+        {"x": -3, "y": 0, "label": "x₂ = −3"},
+        {"x": 2, "y": 0, "label": "x₁ = 2"},
+        {"x": -0.5, "y": -6.25, "label": "vrchol"}
+      ]
+    }
+  }
+]

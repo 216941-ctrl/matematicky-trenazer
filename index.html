@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Procvičování středoškolské matematiky před vysokou školou." />
+  <title>Matematický trenažér</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <p class="eyebrow">PRACOVNÍ SEŠIT</p>
+    <h1>Matematický trenažér</h1>
+    <p class="subtitle">Procvičování středoškolské matematiky před vysokou školou — kvadratické rovnice, logaritmy, goniometrie a další. Vyřeš příklad na papír, pak si zkontroluj výsledek a postup.</p>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+  <div class="score-line" id="score-line">Načítám…</div>
+
+  <section class="practice-card">
+
+    <!-- ===== DIFFICULTY PICKER ===== -->
+    <div id="difficulty-picker" class="hidden">
+      <p class="card-label">VÝBĚR NÁROČNOSTI</p>
+      <p class="difficulty-picker-desc">Vyber obtížnost příkladů, které chceš procvičovat.</p>
+      <div class="difficulty-options">
+        <button id="diff-all" class="btn diff-btn" data-diff="all">Všechny</button>
+        <button id="diff-1"   class="btn diff-btn" data-diff="1">1 — Základní</button>
+        <button id="diff-2"   class="btn diff-btn" data-diff="2">2 — Středně těžké</button>
+        <button id="diff-3"   class="btn diff-btn" data-diff="3">3 — Těžké</button>
+      </div>
+    </div>
+
+    <!-- ===== QUESTION VIEW ===== -->
+    <div id="question-view">
+      <p class="card-label" id="card-label">PŘÍKLAD</p>
+      <div class="problem-box" id="problem-box"></div>
+      <!-- Helper buttons (hint / theory / intuition) -->
+      <div id="helper-btns" class="helper-btns">
+        <button id="hint-btn"      class="btn btn-ghost helper-btn hidden">💡 Nápověda</button>
+        <button id="theory-btn"    class="btn btn-ghost helper-btn hidden">📖 Teorie</button>
+        <button id="intuition-btn" class="btn btn-ghost helper-btn hidden">🐥 Co to znamená?</button>
+      </div>
+
+      <!-- Reveal panels -->
+      <div id="hint-panel" class="reveal-panel hint-panel hidden">
+        <span class="panel-label">NÁPOVĚDA</span>
+        <p id="hint-text"></p>
+      </div>
+      <div id="theory-panel" class="reveal-panel theory-panel hidden">
+        <span class="panel-label">TEORIE</span>
+        <p id="theory-text"></p>
+      </div>
+      <div id="intuition-panel" class="reveal-panel intuition-panel hidden">
+        <span class="panel-label">CO TO ZNAMENÁ?</span>
+        <p id="intuition-text"></p>
+        <div id="graph-container" class="graph-container hidden"></div>
+      </div>
+
+      <!-- Steps (revealed one by one) -->
+      <div id="steps-section" class="steps-section hidden">
+        <p class="steps-heading">POSTUP ŘEŠENÍ</p>
+        <div id="steps-container" class="steps-container"></div>
+      </div>
+
+      <!-- Primary actions -->
+      <div class="actions" id="primary-actions">
+        <button id="prev-btn" class="btn btn-ghost" disabled>← Předchozí</button>
+        <button id="reveal-btn" class="btn btn-amber">Zobrazit výsledek</button>
+        <button id="skip-btn" class="btn btn-ghost">Přeskočit →</button>
+      </div>
+
+      <!-- Home button -->
+      <div class="home-btn-row">
+        <button id="home-btn-quiz" class="btn btn-home" title="Zpět na výběr obtížnosti">🏠 Domů</button>
+      </div>
+
+      <!-- Solution panel (revealed after button click) -->
+      <div id="solution-panel" class="solution-panel hidden">
+        <div class="answer-box" id="answer-box"></div>
+        <div class="actions">
+          <button id="ok-btn" class="btn btn-amber">Zvládl/a jsem ✓</button>
+          <button id="fail-btn" class="btn btn-coral">Ještě to cvičím</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== END VIEW ===== -->
+    <div id="end-view" class="hidden">
+      <p class="card-label">VÝSLEDKY</p>
+      <div class="end-results">
+        <div class="end-row">
+          <span class="end-label correct-label">✓ Správně</span>
+          <span id="end-correct" class="end-value correct-value">0</span>
+        </div>
+        <div class="end-row">
+          <span class="end-label wrong-label">✗ Chybně</span>
+          <span id="end-wrong" class="end-value wrong-value">0</span>
+        </div>
+        <div class="end-row">
+          <span class="end-label skip-label">→ Přeskočeno</span>
+          <span id="end-skipped" class="end-value skip-value">0</span>
+        </div>
+        <div class="end-divider"></div>
+        <div class="end-percentage-row">
+          <span id="end-percentage" class="end-percentage">0 %</span>
+        </div>
+        <p id="end-message" class="end-message"></p>
+      </div>
+      <div class="actions">
+        <button id="restart-btn" class="btn btn-amber">🔄 Znovu</button>
+      </div>
+      <div class="home-btn-row">
+        <button id="home-btn-end" class="btn btn-home" title="Zpět na výběr obtížnosti">🏠 Domů</button>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
