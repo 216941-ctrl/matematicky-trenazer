@@ -462,15 +462,16 @@ h1 {
 /* ---------- Difficulty picker ---------- */
 .feedback-link {
   margin-top: 28px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink-soft);
 }
 .feedback-link a {
-  color: var(--ink-soft);
+  color: var(--amber-dark);
   text-decoration: underline;
   text-underline-offset: 3px;
+  font-weight: 500;
 }
-.feedback-link a:hover { color: var(--ink); }
+.feedback-link a:hover { color: var(--amber); }
 
 
 .difficulty-picker-desc {
