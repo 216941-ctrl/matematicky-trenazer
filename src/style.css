@@ -460,6 +460,19 @@ h1 {
 }
 
 /* ---------- Difficulty picker ---------- */
+.feedback-link {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.feedback-link a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.feedback-link a:hover { color: var(--ink); }
+
+
 .difficulty-picker-desc {
   font-size: 15px;
   color: var(--ink-soft);
